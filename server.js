@@ -38,25 +38,20 @@ var wd= WD.promiseRemote().init({
 	name: "birdie-tour"
 })
 
-// create a background window for work
-
-
-
-
 // don't stop can't stop won't stop
 
 function iter(){
-	return Q.when(null).then(_search).then(_nav).then(delay).then(iter)
+	return newTab(wd).then(_search).then(_nav).then(delay).then(iter)
 }
 
 function _search(){
 	return wd.get("http://google.com").then(function(){
-		return wd.sendKeys("birds\uE007")
+		return wd.keys("birds\uE007")
 	}).delay(diceDelay(2,12,100,5))
 }
 
 function _nav(){
-	return wd.findElements({strategy:"cssSelector", value:"h3 a"}).then(function(links){
+	return wd.elementByCss("h3 a").then(function(links){
 		var i= rand(links.length),
      	  link= links[i]
      	return wd.clickElement(link)
