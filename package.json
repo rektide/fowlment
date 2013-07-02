@@ -1,0 +1,24 @@
+{
+	"name": "fowlment",
+	"version": "1.0.0",
+	"description": "Auto-navigator for bird sites",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/rektide/fowlment"
+	},
+	"author": "rektide",
+	"license": "MIT/X",
+	"bugs": {
+		"url": "https://github.com/rektide/fowlment/issues"
+	},
+	"birds": {
+		"url": "https://github.com/rektide/fowlment/blob/bird-words/bird-words.json"
+	},
+	"dependencies": {
+		"wd": "0.0.32"
+	}
+}
