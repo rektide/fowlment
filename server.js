@@ -1,4 +1,5 @@
-var WD= require("wd")
+var WD= require("wd"),
+  newTab= require("./newTab")
 
 // utility
 
